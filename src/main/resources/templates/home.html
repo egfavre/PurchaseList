@@ -5,15 +5,24 @@
     <title>Purchase List</title>
 </head>
 <body>
+<a href="/?category=null">All</a>
+<a href="/?category=Furniture">Furniture Purchases</a>
+<a href="/?category=Alcohol">Alcohol Purchases</a>
+<a href="/?category=Toiletries">Toiletry Purchases</a>
+<a href="/?category=Shoes">Shoe Purchases</a>
+<a href="/?category=Food">Food Purchases</a>
+<a href="/?category=Jewelry">Jewelry Purchases</a>
+<br>
+<br>
 <table>
     <tr>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Category</td>
-        <td>Credit Card</td>
-        <td>CVV</td>
-        <td>Date</td>
-    </tr>
+        <td><b>Name</b></td>
+        <td><b>Email</b></td>
+        <td><b>Category</b></td>
+        <td><b>Credit Card</b></td>
+        <td><b>CVV</b></td>
+        <td><b>Date</b></td>
+    <</tr>
     {{#purchaselist}}
     <tr>
         <td>{{customer.name}}</td>
