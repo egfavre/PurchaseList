@@ -19,7 +19,7 @@ public class Purchase {
     String date;
 
     @Column(nullable = false)
-    int creditCard;
+    String creditCard;
 
     @Column(nullable = false)
     int cvv;
@@ -27,7 +27,7 @@ public class Purchase {
     @Column(nullable = false)
     String category;
 
-    public Purchase(Customer customer, String date, int creditCard, int cvv, String category) {
+    public Purchase(Customer customer, String date, String creditCard, int cvv, String category) {
         this.customer = customer;
         this.date = date;
         this.creditCard = creditCard;
@@ -62,11 +62,11 @@ public class Purchase {
         this.date = date;
     }
 
-    public int getCreditCard() {
+    public String getCreditCard() {
         return creditCard;
     }
 
-    public void setCreditCard(int creditCard) {
+    public void setCreditCard(String creditCard) {
         this.creditCard = creditCard;
     }
 
