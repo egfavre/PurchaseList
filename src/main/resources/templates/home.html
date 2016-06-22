@@ -5,6 +5,25 @@
     <title>Purchase List</title>
 </head>
 <body>
-hi
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Category</td>
+        <td>Credit Card</td>
+        <td>CVV</td>
+        <td>Date</td>
+    </tr>
+    {{#purchaselist}}
+    <tr>
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{category}}</td>
+        <td>{{creditCard}}</td>
+        <td>{{cvv}}</td>
+        <td>{{date}}</td>
+    </tr>
+    {{/purchaselist}}
+</table>
 </body>
 </html>

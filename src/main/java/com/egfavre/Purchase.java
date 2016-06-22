@@ -24,7 +24,6 @@ public class Purchase {
     @Column(nullable = false)
     int cvv;
 
-    @Column(nullable = false)
     String category;
 
     public Purchase(Customer customer, String date, String creditCard, int cvv, String category) {

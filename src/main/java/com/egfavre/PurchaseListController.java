@@ -2,6 +2,7 @@ package com.egfavre;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -61,7 +62,33 @@ public class PurchaseListController {
     }
 
     @RequestMapping (path = "/", method = RequestMethod.GET)
-    public String home (HttpSession session){
+    public String home (HttpSession session, Model model, String category){
+        Iterable<Purchase> purchaseList;
+        if (category == null){
+            purchaseList = purchases.findAll();
+        }
+        else if (category.equals("Furniture")){
+            purchaseList = purchases.findByCategory("Furniture");
+        }
+        else if (category.equals("Alcohol")){
+            purchaseList = purchases.findByCategory("Alcohol");
+        }
+        else if (category.equals("Toiletries")){
+            purchaseList = purchases.findByCategory("Toiletries");
+        }
+        else if (category.equals("Shoes")){
+            purchaseList = purchases.findByCategory("Shoes");
+        }
+        else if (category.equals("Food")){
+            purchaseList = purchases.findByCategory("Food");
+        }
+        else if (category.equals("Jewelry")){
+            purchaseList = purchases.findByCategory("Jewelry");
+        }
+        else {
+            purchaseList = purchases.findAll();
+        }
+        model.addAttribute("purchaselist", purchaseList);
         return "home";
     }
 }
